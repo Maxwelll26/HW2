@@ -8,7 +8,7 @@ public class Main {
         //testPartB();
     }
 
-    // hello
+    // hello world
     /**
      * Performs tests of part A.
      */
