@@ -1,6 +1,6 @@
 public class Sum extends Function {
-    private Function firstFunction;
-    private Function secondFunction;
+    protected Function firstFunction;
+    protected Function secondFunction;
 
 
     /**
@@ -46,6 +46,4 @@ public class Sum extends Function {
         Function derivativeSecond = secondFunction.derivative();
         return new Sum(derivativeFirst,derivativeSecond);
     }
-}
-
 }
