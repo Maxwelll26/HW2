@@ -3,7 +3,7 @@ public class Product extends Function {
         private Function secondFunction;
 
         /**
-         * contractor for the power class. power in this case is between 2 objects.
+         * contractor for the Product class. product in this case is between 2 objects.
          * @param firstFunction from the Type of function
          * @param secondFunction from the type of function
          */
@@ -48,4 +48,4 @@ public class Product extends Function {
         }
     }
 
-}
+
