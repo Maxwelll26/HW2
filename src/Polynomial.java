@@ -46,4 +46,5 @@ public class Polynomial extends Function {
         return "(" + sb.toString() + ")";
     }
 
+
 }
