@@ -5,14 +5,14 @@ public class Main {
 
     public static void main(String[] args) {
         testPartA();
-        //testPartB();
+        testPartB();
     }
 
     // hello world dddddggggחחחחח
     /**
      * Performs tests of part A.
      */
-    private static void testPartA() {
+    /*private static void testPartA() {
         System.out.println("------------------------------ Tests for part A ------------------------------");
         Date d1 = new Date(2023, 5, 21);
         Object o1 = d1;
@@ -53,11 +53,11 @@ public class Main {
         dt2.setMinute(59);
         System.out.println("dt2: " + dt2);
     }
-
+    */
     /**
      * Performs tests of part B.
      */
-    /*private static void testPartB() {
+    private static void testPartB() {
         System.out.println("-------------------- Tests for part B --------------------");
         rnd = new Random(42);
 
@@ -160,11 +160,11 @@ public class Main {
 
         testRootFinding();
     }
-    */
+
     /**
      * Tests the methods of a given function.
      */
-    /*private static void testFunction(Function function, String name, int taylorMaxOrder) {
+    private static void testFunction(Function function, String name, int taylorMaxOrder) {
         System.out.println(name + ": " + function);
         System.out.println(name + " with toString: " + function.toString());
         printFunctionValues(function, name, 10);
@@ -190,14 +190,14 @@ public class Main {
             System.out.println(name + " value at " + x + ": " + function.valueAt(x));
         }
     }
-    */
+
     /**
      * Rounds a given number up to 3 decimal places.
      *
      * @param num The number to round
      * @return The rounded number
      */
-    /*private static double roundThreePlaces(double num) {
+    private static double roundThreePlaces(double num) {
         return Double.parseDouble(String.format("%.3f", num));
     }
 
@@ -248,5 +248,5 @@ public class Main {
         }
     }
 
-     */
+
 }
