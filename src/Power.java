@@ -1,2 +1,3 @@
-public class Power {
+public class Power extends Function {
+
 }

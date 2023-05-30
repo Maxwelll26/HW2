@@ -12,6 +12,7 @@ public class Polynomial extends Function {
         }
         return result;
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
