@@ -45,6 +45,13 @@ public class Polynomial extends Function {
         }
         return "(" + sb.toString() + ")";
     }
-
-
+    @Override
+    public Function derivative() {
+        int degree = coefficients.length - 1;
+        double[] derivativeCoefficients = new double[degree];
+        for (int i = 0; i < degree; i++) {
+            derivativeCoefficients[i] = coefficients[i + 1] * (i + 1);
+        }
+        return new Polynomial(derivativeCoefficients);
+    }
 }
