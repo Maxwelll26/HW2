@@ -116,7 +116,7 @@ public class Main {
                                     new Constant(5),
                                     new Polynomial(3.1415));
         testFunction(multiSum2, "multiSum2", 10);
-
+ /*
         Function multiProd1 = new MultiProduct(new Constant(10), new Polynomial(7, 3.5, 2, 1));
         testFunction(multiProd1, "multiProd1", 10);
 
@@ -128,6 +128,8 @@ public class Main {
                                                             new Constant(21),
                                                             poly2)));
         testFunction(multiProd2, "multiProd2", 10);
+
+  */
 
         Function pow1 = new Power(poly1, 3);
         testFunction(pow1, "pow1", 5);
@@ -158,7 +160,7 @@ public class Main {
                                                                         new Difference(quotient1, new Negation(poly2))))))));
         testFunction(massiveFunc, "massiveFunc", 5);
 
-        testRootFinding();
+        //testRootFinding();
     }
 
     /**
@@ -206,7 +208,8 @@ public class Main {
             System.out.println(name + " Taylor polynomial of order " + n + ": " + function.taylorPolynomial(n));
         }
     }
-
+}
+/*
     private static void testRootFinding() {
         Function poly3 = new Polynomial(-4, 0, 1);
         System.out.println("poly3: " + poly3);
@@ -234,6 +237,7 @@ public class Main {
         printRoot(quotient3, "quotient3", -4, -1, 1e-6);
     }
 
+
     private static void printRoot(Function function, String name, double a, double b, double epsilon) {
         if (epsilon > 0) {
             System.out.println(name + " root in [" + a + ", " + b + "] and epsilon=" + epsilon + ": " + function.bisectionMethod(a, b, epsilon));
@@ -250,3 +254,6 @@ public class Main {
 
 
 }
+
+ */
+

@@ -48,15 +48,20 @@ public abstract class Function {
     }
 
 
+    /**
+     * Calculates the Taylor polynomial of the function at a given order.
+     * @param order The order of the Taylor polynomial.
+     * @return The Taylor polynomial of the function at the specified order.
+     */
 
-    public double taylorPolynomial(double x, int order) {
+    public String  taylorPolynomial(int order) {
         double result = 0.0;
         for (int i = 0; i <= order; i++) {
-            double coefficient = derivativeAtOrder(i).valueAt(x) / calculateFactorial(i);
-            double term = coefficient * Math.pow(x, i);
+            double coefficient = derivativeAtOrder(i).valueAt(0) / calculateFactorial(i);
+            double term = coefficient * Math.pow(0, i);
             result += term;
         }
-        return result;
+        return "(" + result + ")";
     }
 
 
