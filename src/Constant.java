@@ -55,20 +55,20 @@ public class Constant extends Function {
             return "(" + intConstant + ")";
         }
     }
-    /*
+
     @Override
     public Function derivative() {
-        return new Constant(0.0);
+        return new Constant(0);
     }
 
-     */
-    @Override
+
+    /*@Override
     public Function derivative() {
         if (isDouble) {
             return new Constant(0.0);
         } else {
             return new Constant(0);
         }
-    }
+    }*/
 
 }

@@ -32,7 +32,6 @@ public class Sum extends Function {
     @Override
     public String toString() {
         return "(" + firstFunction.toString() + " + " + secondFunction.toString() + ")";
-
     }
 
     /**

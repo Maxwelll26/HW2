@@ -19,7 +19,7 @@ public class Quotient extends Function{
      */
     @Override
     public String toString() {
-        return  "(" + firstFunction.toString() + "/" + secondFunction.toString() + ")";
+        return  "(" + firstFunction.toString() + " / " + secondFunction.toString() + ")";
     }
 
     /**

@@ -16,17 +16,26 @@ public class Polynomial extends Function {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = coefficients.length - 1; i >= 0; i--) {
+        boolean isFirstTerm = true;
+
+        for (int i = 0; i < coefficients.length; i++) {
             double coefficient = coefficients[i];
+
             if (coefficient == 0) {
                 continue;
             }
-            if (sb.length() > 0) {
+
+            if (!isFirstTerm) {
                 sb.append(coefficient >= 0 ? " + " : " - ");
-            } else if (coefficient < 0) {
-                sb.append("-");
+                coefficient = Math.abs(coefficient);
+            } else {
+                isFirstTerm = false;
+                if (coefficient < 0) {
+                    sb.append("-");
+                    coefficient = Math.abs(coefficient);
+                }
             }
-            coefficient = Math.abs(coefficient);
+
             if (i == 0 || coefficient != 1) {
                 if (coefficient == (int) coefficient) {
                     sb.append((int) coefficient);
@@ -34,6 +43,7 @@ public class Polynomial extends Function {
                     sb.append(coefficient);
                 }
             }
+
             if (i > 0) {
                 sb.append("x");
                 if (i > 1) {
@@ -41,9 +51,11 @@ public class Polynomial extends Function {
                 }
             }
         }
+
         if (sb.length() == 0) {
-            sb.append("0"); //zero polynomial
+            sb.append("0"); // zero polynomial
         }
+
         return "(" + sb.toString() + ")";
     }
     @Override
