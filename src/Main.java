@@ -116,8 +116,8 @@ public class Main {
                                     new Constant(5),
                                     new Polynomial(3.1415));
         testFunction(multiSum2, "multiSum2", 10);
- /*
-        Function multiProd1 = new MultiProduct(new Constant(10), new Polynomial(7, 3.5, 2, 1));
+
+        /*Function multiProd1 = new MultiProduct(new Constant(10), new Polynomial(7, 3.5, 2, 1));
         testFunction(multiProd1, "multiProd1", 10);
 
         Function multiProd2 = new MultiProduct(
@@ -171,7 +171,7 @@ public class Main {
         System.out.println(name + " with toString: " + function.toString());
         printFunctionValues(function, name, 10);
         System.out.println(name + " derivative: " + function.derivative());
-        //printTaylorPolynomial(function, name, taylorMaxOrder);
+        printTaylorPolynomial(function, name, taylorMaxOrder);
         System.out.println();
     }
 
@@ -209,8 +209,8 @@ public class Main {
         }
     }
 }
-/*
-    private static void testRootFinding() {
+
+    /*private static void testRootFinding() {
         Function poly3 = new Polynomial(-4, 0, 1);
         System.out.println("poly3: " + poly3);
         printRoot(poly3, "poly3", 0, 5, 1e-5);
@@ -236,9 +236,9 @@ public class Main {
         printRoot(quotient3, "quotient3", -3, -1, 1e-10);
         printRoot(quotient3, "quotient3", -4, -1, 1e-6);
     }
+*/
 
-
-    private static void printRoot(Function function, String name, double a, double b, double epsilon) {
+    /*private static void printRoot(Function function, String name, double a, double b, double epsilon) {
         if (epsilon > 0) {
             System.out.println(name + " root in [" + a + ", " + b + "] and epsilon=" + epsilon + ": " + function.bisectionMethod(a, b, epsilon));
         } else {
@@ -251,9 +251,9 @@ public class Main {
             System.out.println(name + " root near " + mid + " and default epsilon: " + function.newtonRaphsonMethod(mid));
         }
     }
+*/
 
 
-}
 
- */
+
 

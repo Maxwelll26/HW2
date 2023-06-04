@@ -61,6 +61,10 @@ public class Polynomial extends Function {
     @Override
     public Function derivative() {
         int degree = coefficients.length - 1;
+        if (degree <= 0) {
+            // Handle the case where the polynomial is a constant (degree 0)
+            return new Polynomial(0);
+        }
         double[] derivativeCoefficients = new double[degree];
         for (int i = 0; i < degree; i++) {
             derivativeCoefficients[i] = coefficients[i + 1] * (i + 1);

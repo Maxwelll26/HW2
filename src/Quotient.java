@@ -37,7 +37,7 @@ public class Quotient extends Function{
 
     /**
      * The derivative of the Quotient of 2 functions is known and is in the following format:
-     * F(x)/G(x) dx = (F`(x)*G(x) - F(x)*G`(x)) / [G(x)]^2
+     * F(x)/G(x) dx = (F`(x)*G(x) - G`(x)*F(x)) / [G(x)]^2
      * @return Quotient function
      */
     @Override
@@ -45,7 +45,7 @@ public class Quotient extends Function{
         Function derivativeFirst = firstFunction.derivative();
         Function derivativeSecond = secondFunction.derivative();
         Product firstMulti = new Product(derivativeFirst,secondFunction);
-        Product SecondMulti = new Product(firstFunction,derivativeSecond);
+        Product SecondMulti = new Product(derivativeSecond,firstFunction);
         Difference countedInFraction = new Difference(firstMulti,SecondMulti); // תוצאת המונה
         Power denominator = new Power(secondFunction,2); // תוצאת המכנה
         return new Quotient(countedInFraction,denominator);

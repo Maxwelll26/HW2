@@ -35,7 +35,7 @@ public class Product extends Function {
 
         /**
          * The derivative of the product of 2 functions is known and is in the following format:
-         * F(x)*G(x) dx = F`(x)*G(x) + F(x)*G`(x)
+         * F(x)*G(x) dx = F`(x)*G(x) + G'(x)*F(x)
          * @return sum function.
          */
         @Override
@@ -43,7 +43,7 @@ public class Product extends Function {
             Function derivativeFirst = firstFunction.derivative();
             Function derivativeSecond = secondFunction.derivative();
             Product firstMulti = new Product(derivativeFirst,secondFunction);
-            Product SecondMulti = new Product(firstFunction,derivativeSecond);
+            Product SecondMulti = new Product(derivativeSecond,firstFunction);
             return new Sum(firstMulti,SecondMulti);
         }
     }

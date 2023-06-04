@@ -61,7 +61,10 @@ public abstract class Function {
             double term = coefficient * Math.pow(0, i);
             result += term;
         }
-        return "(" + result + ")";
+        if (result == (int) result)
+            return "(" + (int) result + ")";
+        else
+            return "(" + result + ")";
     }
 
 

@@ -41,7 +41,7 @@ public class Power extends Function {
         if (power > 1) {
             Function baseDerivative = function.derivative();
             Function internalDerivative = new Power(function, power - 1);
-            Product baseAndInternal = new Product(baseDerivative, internalDerivative);
+            Product baseAndInternal = new Product(internalDerivative, baseDerivative);
             return new Product(new Constant(power), baseAndInternal);
         } else
            return function.derivative();
