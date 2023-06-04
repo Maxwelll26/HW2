@@ -8,7 +8,6 @@ public class Main {
         testPartB();
     }
 
-    // hello world dddddggggחחחחח
     /**
      * Performs tests of part A.
      */
@@ -102,6 +101,7 @@ public class Main {
         Function multiSum1 = new MultiSum(
                                     new Constant(21.03),
                                     new Constant(3));
+
         testFunction(multiSum1, "multiSum1", 10);
 
         Function poly1 = new Polynomial(0, 0, 1, 1.5, 2, 3.1415);

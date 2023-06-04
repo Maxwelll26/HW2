@@ -12,15 +12,16 @@ public abstract class Function {
      * The Taylor polynomial is a scheme of members, each part is divided by a factorial.
      * In this function we calculate what is the factorial of a certain number.
      * @param n the number to calculate the factorial.
-     * @return the factorial number
+     * @return the factorial number in double according to the instructions.
      */
-    public int calculateFactorial(int n) {
+    public double calculateFactorial(int n) {
         if (n==1 || n==0)
             return 1;
         else {
-            int factorial = 2;
 
-            for (int i = 2; i <= n; i++) {
+            double factorial = 1;
+
+            for (int i = 1; i <= n; i++) {
                 factorial *= i;
             }
             return factorial;
@@ -28,44 +29,25 @@ public abstract class Function {
     }
 
     /**
-     * calculates the derivative of a function at a specified order.
-     * If the order is greater than 0, it calculates the derivative of the derivative function
-     * and assigns it back to the derivative
-     * @param order the order for the current function we cant to do derivative
-     * @return Function`s derivative.
+     * Calculates the Taylor polynomial of the current polynomial function up to a specified order when X=0.
+     * @param order the order of the Taylor polynomial
+     * @return the Taylor polynomial of the specified order
      */
-    public Function derivativeAtOrder(int order) {
-        if (order == 0) {
-            return this;
+    public Polynomial  taylorPolynomial(int order) {
+        double[] numbers = new double[order+1];
+        Function derivative = this ;
+        for (int index=0; index<=order; index++){
+            // for each index it will calculate its value and will divide in the current factorial.
+            numbers[index] = derivative.valueAt(0) / calculateFactorial(index);
+            derivative = derivative.derivative();
+
         }
-        else {
-            Function derivative = this;
-            for (int i = 0; i < order; i++) {
-                derivative = derivative.derivative();
-            }
-            return derivative;
-        }
+         return new Polynomial(numbers);
+         }
+
+
     }
 
 
-    /**
-     * Calculates the Taylor polynomial of the function at a given order.
-     * @param order The order of the Taylor polynomial.
-     * @return The Taylor polynomial of the function at the specified order.
-     */
-
-    public String  taylorPolynomial(int order) {
-        double result = 0.0;
-        for (int i = 0; i <= order; i++) {
-            double coefficient = derivativeAtOrder(i).valueAt(0) / calculateFactorial(i);
-            double term = coefficient * Math.pow(0, i);
-            result += term;
-        }
-        if (result == (int) result)
-            return "(" + (int) result + ")";
-        else
-            return "(" + result + ")";
-    }
 
 
-}

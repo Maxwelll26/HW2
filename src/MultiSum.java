@@ -1,8 +1,11 @@
 public class MultiSum extends Sum {
-    public MultiSum(Function function1, Function function2, Function... functions) {
-        super(function1, function2);
-        for (Function function : functions) {
-            secondFunction = new Sum(secondFunction, function);
+    public MultiSum(Function... functions) {
+        super(functions[0], functions[1]);
+        for (int i = 2; i < functions.length; i++) {
+            addFunction(functions[i]);
         }
+    }
+    private void addFunction(Function function) {
+        secondFunction = new Sum(secondFunction, function);
     }
 }
