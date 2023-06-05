@@ -128,8 +128,8 @@ public class Main {
                                                             new Constant(21),
                                                             poly2)));
         testFunction(multiProd2, "multiProd2", 10);
+*/
 
-  */
 
         Function pow1 = new Power(poly1, 3);
         testFunction(pow1, "pow1", 5);

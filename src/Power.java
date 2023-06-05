@@ -36,6 +36,7 @@ public class Power extends Function {
      * f'(x) = n * g(x)^(n-1) * g'(x)
      * @return product function
      */
+    /*
     @Override
     public Function derivative() {
         if (power > 1) {
@@ -46,4 +47,17 @@ public class Power extends Function {
         } else
            return function.derivative();
     }
+
+     */
+    @Override
+    public Function derivative() {
+        if (power > 0) {
+            Function baseDerivative = function.derivative();
+            Function internalDerivative = new Power(function, power - 1);
+            return new Product(new Constant(power), new Product(internalDerivative, baseDerivative));
+        } else {
+            return new Constant(0); // The derivative of a constant is 0
+        }
+    }
+
 }
