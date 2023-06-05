@@ -117,7 +117,7 @@ public class Main {
                                     new Polynomial(3.1415));
         testFunction(multiSum2, "multiSum2", 10);
 
-        /*Function multiProd1 = new MultiProduct(new Constant(10), new Polynomial(7, 3.5, 2, 1));
+        Function multiProd1 = new MultiProduct(new Constant(10), new Polynomial(7, 3.5, 2, 1));
         testFunction(multiProd1, "multiProd1", 10);
 
         Function multiProd2 = new MultiProduct(
@@ -128,7 +128,7 @@ public class Main {
                                                             new Constant(21),
                                                             poly2)));
         testFunction(multiProd2, "multiProd2", 10);
-*/
+
 
 
         Function pow1 = new Power(poly1, 3);

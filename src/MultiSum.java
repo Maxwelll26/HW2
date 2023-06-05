@@ -4,28 +4,14 @@
  * It extends the Function class and provides functionality for handling multiple functions.
  */
 public class MultiSum extends Function {
-    // max code
-    /*
-    public MultiSum(Function... functions) {
-        super(functions[0], functions[1]);
-        for (int i = 2; i < functions.length; i++) {
-            addFunction(functions[i]);
-        }
-    }
-    private void addFunction(Function function) {
-        secondFunction = new Sum(secondFunction, function);
-    }
-
-    @Override
-    public String toString() {
-            return "(" + firstFunction.toString() + " + " + secondFunction.toString() + ")";
-        }
-
-     */
     private  Function[] functions;
 
     /**
      * Constructs a MultiSum function with the given functions.
+     * To make sure that in order to use this class, at least 2 functions are needed, we created our constructor
+     * accordingly so that it receives the first and second function, and if there are more, then that's fine.
+     * the 2 first given function they will be in the array in the first 2 places and all the other
+     * function in the places afterwards.
      * @param functions The functions to be summed.
      */
     public MultiSum(Function f1, Function f2, Function... functions) {
@@ -72,7 +58,9 @@ public class MultiSum extends Function {
 
     /**
      * Calculates the derivative of the MultiSum function using derivative method of function .
-     * @return The derivative of the MultiSum function.
+     * every function in the array will be calculated her derivative.
+     * @return The derivative of the MultiSum function - the first 2 arguments are thr derivative of the first 2
+     * functions, and the rest will be the derivative of the other functions.
      */
     @Override
     public Function derivative() {
