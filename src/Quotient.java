@@ -50,8 +50,8 @@ public class Quotient extends Function{
         Function derivativeSecond = secondFunction.derivative();
         Product firstMulti = new Product(derivativeFirst,secondFunction);
         Product SecondMulti = new Product(derivativeSecond,firstFunction);
-        Difference countedInFraction = new Difference(firstMulti,SecondMulti); // תוצאת המונה
-        Power denominator = new Power(secondFunction,2); // תוצאת המכנה
+        Difference countedInFraction = new Difference(firstMulti,SecondMulti);
+        Power denominator = new Power(secondFunction,2);
         return new Quotient(countedInFraction,denominator);
     }
 }

@@ -3,7 +3,6 @@
  to create a sum of two functions.
  */
 public class Sum extends MultiSum {
-
     /**
      * Constructs a Sum function with the given functions.
      *
