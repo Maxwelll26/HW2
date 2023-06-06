@@ -13,11 +13,14 @@ public class MultiSum extends Function {
      * the 2 first given function they will be in the array in the first 2 places and all the other
      * function in the places afterwards.
      * @param functions The functions to be summed.
+     * @param f1 the first function that must be added - for compilation
+     * @param f2 the second function that must be added - for compilation
      */
-    public MultiSum(Function f1, Function f2, Function... functions) {
+    public MultiSum(Function f1, Function f2,Function... functions) {
         this.functions = new Function[functions.length + 2];
         this.functions[0] = f1;
         this.functions[1] = f2;
+
         for (int i = 0; i < functions.length; i++) {
             this.functions[i + 2] = functions[i];
         }
@@ -68,7 +71,7 @@ public class MultiSum extends Function {
         for (int i = 2; i < functions.length; i++) {
             derivatives[i - 2] = functions[i].derivative();
         }
-        return new MultiSum(functions[0].derivative(), functions[1].derivative(), derivatives);
+        return new MultiSum(functions[0].derivative(),functions[1].derivative(), derivatives);
     }
 
 

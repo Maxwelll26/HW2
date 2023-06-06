@@ -11,14 +11,16 @@ public class MultiProduct extends Function{
      * accordingly so that it receives the first and second function, and if there are more, then that's fine.
      * the 2 first given function they will be in the array in the first 2 places and all the other
      * function in the places afterwards.
-     * @param functions The functions to be summed.
+     * @param f1 - the first function that must be added - for compilation.
+     * @param f2 - the second function that must be added - for compilation.
+     * @param functions - a varargs for all the other functions.
      */
-    public MultiProduct(Function f1, Function f2, Function... functions) {
+    public MultiProduct(Function f1,Function f2 ,Function... functions) {
         this.functions = new Function[functions.length + 2];
         this.functions[0] = f1;
         this.functions[1] = f2;
-        for (int i = 0; i < functions.length; i++) {
-            this.functions[i + 2] = functions[i];
+        for (int i = 2; i < this.functions.length; i++) {
+            this.functions[i] = functions[i-2];
         }
     }
 
@@ -56,21 +58,53 @@ public class MultiProduct extends Function{
             return sb.toString();
         }
 
-        /**
+     /**
          * Calculates the derivative of the MultiProduct function using derivative method of function .
          * @return The derivative of the MultiProduct function using the multiSum function.
          */
+
         @Override
-        public Function derivative() {
-            Function[] derivatives = new Function[functions.length - 2];
-            for (int i = 2; i < functions.length; i++) {
-                derivatives[i - 2] = functions[i].derivative();
+        public MultiSum derivative() {
+            int number = functions.length;
+            Function[] partFunction = new Function[number-2];
+
+            for (int i = 0; i < number-2; i++) {
+                partFunction[i] = functions[i+2];
             }
-            return new MultiSum(functions[0].derivative(), functions[1].derivative(), derivatives);
+
+            MultiProduct derivative1 = new MultiProduct(functions[0].derivative(), functions[1],partFunction);
+            MultiProduct derivative2 = new MultiProduct(functions[1].derivative(), functions[0],partFunction);
+            MultiProduct[] derivative = new MultiProduct[number-2];
+
+            for (int index = 0; index < number - 2; index++) {
+                derivative[index] = new MultiProduct(functions[index + 2].derivative(), functions[0]);
+
+                for (int j = 0; j < number; j++) {
+                    if (index+2 != j && j!=0) {
+                        derivative[index].addFunction(functions[j]);
+                    }
+                }
+            }
+
+            return new MultiSum(derivative1, derivative2, derivative);
         }
 
 
+
+    private void addFunction(Function function) {
+        Function[] newFunctions = new Function[this.functions.length + 1];
+        int i = 0;
+        for (; i < this.functions.length; i++) {
+            newFunctions[i] = this.functions[i];
+        }
+        newFunctions[i] = function;
+        this.functions = newFunctions;
     }
+
+
+
+
+}
 
 
 

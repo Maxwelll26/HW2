@@ -27,6 +27,8 @@ public class Power extends Function {
      * We represent power between  function and a number simply by F(x)^a
      * @return String in the format (f(x)^power)
      */
+
+
     @Override
     public String toString() {
         return  "(" + function.toString() + "^" + power + ")";
@@ -36,19 +38,7 @@ public class Power extends Function {
      * f'(x) = n * g(x)^(n-1) * g'(x)
      * @return product function
      */
-    /*
-    @Override
-    public Function derivative() {
-        if (power > 1) {
-            Function baseDerivative = function.derivative();
-            Function internalDerivative = new Power(function, power - 1);
-            Product baseAndInternal = new Product(internalDerivative, baseDerivative);
-            return new Product(new Constant(power), baseAndInternal);
-        } else
-           return function.derivative();
-    }
 
-     */
     @Override
     public Function derivative() {
         if (power > 0) {
