@@ -1,8 +1,22 @@
+/**
+ * The Date class represents a date with the year, month, and day components.
+ * It provides methods for creating and manipulating dates.
+ */
 public class Date {
     private int year;
     private int month;
     private int day;
-
+    /**
+     * Constructs a Date object with the specified year, month, and day.
+     * The year must be between -3999 and 3999 (inclusive).
+     * The month must be between 1 and 12 (inclusive).
+     * The day must be between 1 and 31 (inclusive).
+     * If any of the values are outside the valid range, default values are used.
+     *
+     * @param year  the year component of the date
+     * @param month the month component of the date
+     * @param day   the day component of the date
+     */
     public Date(int year, int month, int day) {
         if (year >= -3999 && year <= 3999)
             this.year = year;
@@ -23,6 +37,14 @@ public class Date {
         else
             this.month = 1;
     }
+    /**
+     * Compares this Date object to the specified object.
+     * The result is true if and only if the argument is not null and represents
+     * the same date as this Date object.
+     *
+     * @param other the object to compare this Date against
+     * @return true if the given object is equal to this Date, false otherwise
+     */
     @Override
     public boolean equals(Object other) {
         if (this == other)

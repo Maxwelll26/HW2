@@ -1,9 +1,24 @@
+/**
+ The Polynomial class represents a polynomial function with variable coefficients.
+ It extends the Function class and provides methods for calculating the value, obtaining a string representation,
+ and computing the derivative of the polynomial function.
+ */
 public class Polynomial extends Function {
     private final double[] coefficients;
-
+    /**
+     Constructs a Polynomial function with the given coefficients.
+     The coefficients are specified in increasing order of degree.
+     @param coefficients The coefficients of the polynomial function.
+     */
     public Polynomial(double... coefficients) {
         this.coefficients = coefficients;
     }
+    /**
+     Calculates the value of the Polynomial function at the given x value.
+     It evaluates the polynomial by summing up the product of each coefficient and the corresponding power of x.
+     @param x The x value at which to calculate the function's value.
+     @return The value of the Polynomial function at the given x value.
+     */
     @Override
     public double valueAt(double x) {
         double result = 0.0;
@@ -12,7 +27,11 @@ public class Polynomial extends Function {
         }
         return result;
     }
-
+    /**
+     Returns a string representation of the Polynomial function.
+     It represents the polynomial as a sum of its terms with proper formatting.
+     @return The string representation of the Polynomial function.
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -58,6 +77,12 @@ public class Polynomial extends Function {
 
         return "(" + sb.toString() + ")";
     }
+    /**
+     Calculates the derivative of the Polynomial function.
+     It computes the derivative of the polynomial by multiplying each coefficient by its corresponding power of x
+     and reducing the degree of the polynomial by 1.
+     @return The derivative of the Polynomial function as a new Polynomial function.
+     */
     @Override
     public Function derivative() {
         int degree = coefficients.length - 1;

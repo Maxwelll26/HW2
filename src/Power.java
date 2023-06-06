@@ -1,9 +1,14 @@
+/**
+ The Power class represents a power function, where a given function is raised to a specified power.
+ It extends the Function class and provides methods for calculating the value, obtaining a string representation,
+ and computing the derivative of the power function.
+ */
 public class Power extends Function {
     private Function function;
     private int power;
 
     /**
-     * contractor for the power class. power in this case is between 2 objects.
+     * Constructor for the power class. power in this case is between 2 objects.
      * @param function from the Type of function.
      * @param power To what power do we raise the function
      */
@@ -27,8 +32,6 @@ public class Power extends Function {
      * We represent power between  function and a number simply by F(x)^a
      * @return String in the format (f(x)^power)
      */
-
-
     @Override
     public String toString() {
         return  "(" + function.toString() + "^" + power + ")";
@@ -38,21 +41,11 @@ public class Power extends Function {
      * f'(x) = n * g(x)^(n-1) * g'(x)
      * @return product function
      */
-
     @Override
     public Function derivative() {
-        /*if (power > 0) {
-            Function baseDerivative = function.derivative();
-            Function internalDerivative = new Power(function, power - 1);
-            return new Product(new Constant(power), new Product(internalDerivative, baseDerivative));
-        } else {
-            return new Constant(0); // The derivative of a constant is 0
-        }
-         */
         if (power == 1)
             return function.derivative();
         else
             return new MultiProduct(new Constant(power), new Power(function, power - 1), function.derivative());
     }
-
 }

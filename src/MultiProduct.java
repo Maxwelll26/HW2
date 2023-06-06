@@ -22,7 +22,11 @@ public class MultiProduct extends Function {
             this.functions[i] = functions[i - 2];
         }
     }
-
+    /**
+     Constructs a MultiProduct function with two given functions.
+     @param func1 The first function in the product.
+     @param func2 The second function in the product.
+     */
     public MultiProduct(Function func1, Function func2) {
         this.functions = new Function[2];
         this.functions[0] = func1;
@@ -90,7 +94,10 @@ public class MultiProduct extends Function {
 
         return new MultiSum(f1, f2, m);
     }
-
+    /**
+     Adds a new function to the MultiProduct.
+     @param function The function to be added to the MultiProduct.
+     */
     private void addFunction(Function function) {
         Function[] newFunctions = new Function[this.functions.length + 1];
         int i = 0;

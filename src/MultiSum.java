@@ -1,4 +1,3 @@
-
 /**
  * The MultiSum class represents a function that is a sum of multiple functions.
  * It extends the Function class and provides functionality for handling multiple functions.
@@ -25,7 +24,6 @@ public class MultiSum extends Function {
             this.functions[i + 2] = functions[i];
         }
     }
-
 
     /**
      * Calculates the value of the MultiSum function at the given x value.
@@ -73,8 +71,6 @@ public class MultiSum extends Function {
         }
         return new MultiSum(functions[0].derivative(),functions[1].derivative(), derivatives);
     }
-
-
 }
 
 

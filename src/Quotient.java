@@ -1,9 +1,13 @@
+/**
+ The Quotient class represents a quotient of two functions. It extends the Function class and provides methods for
+ obtaining a string representation, calculating the value, and computing the derivative of the quotient function.
+ */
 public class Quotient extends Function{
     private Function firstFunction;
     private Function secondFunction;
 
     /**
-     * contractor for the Quotient class. A portion is defined between 2 functions and no less.
+     * Constructor for the Quotient class. A portion is defined between 2 functions and no less.
      * @param firstFunction from the Type of function
      * @param secondFunction from the type of function
      */

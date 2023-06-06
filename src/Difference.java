@@ -1,3 +1,7 @@
+/**
+ The Difference class represents a function that calculates the difference between two functions.
+ It extends the Function class and provides functionality for handling the difference operation.
+ */
 public class Difference extends Function {
     private Function firstFunction;
     private Function secondFunction;

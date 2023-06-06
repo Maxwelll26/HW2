@@ -7,9 +7,6 @@ public abstract class Function {
 
     public abstract Function derivative();
 
-
-    /* creating a code for Taylor Polynomial calculation */
-
     /**
      * The Taylor polynomial is a scheme of members, each part is divided by a factorial.
      * In this function we calculate what is the factorial of a certain number.
@@ -47,6 +44,14 @@ public abstract class Function {
         return new Polynomial(numbers);
     }
 
+    /**
+     Performs the Bisection Method to find the root of a function within a given interval.
+     The Bisection Method is an iterative numerical algorithm that repeatedly bisects an interval
+     and narrows down the range where the root is located until a desired level of accuracy is achieved.
+     @param a The left endpoint of the interval.
+     @param b The right endpoint of the interval.
+     @return The approximate value of the root within the specified interval.
+     */
     public double bisectionMethod(double a, double b) {
         double epsilon = 1e-5; // Default error value
         double left = a;
@@ -61,6 +66,16 @@ public abstract class Function {
         }
         return (right + left) / 2;
     }
+
+    /**
+     Performs the Bisection Method to find the root of a function within a given interval.
+     The Bisection Method is an iterative numerical algorithm that repeatedly bisects an interval
+     and narrows down the range where the root is located until a desired level of accuracy is achieved.
+     @param a The left endpoint of the interval.
+     @param b The right endpoint of the interval.
+     @param epsilon The desired level of accuracy for the root approximation.
+     @return The approximate value of the root within the specified interval.
+     */
     public double bisectionMethod(double a, double b, double epsilon) {
         double left = a;
         double right = b;
@@ -74,6 +89,15 @@ public abstract class Function {
         }
         return (right + left) / 2;
     }
+
+    /**
+     Performs the Newton-Raphson Method to find the root of a function starting from an initial guess.
+     The Newton-Raphson Method is an iterative numerical algorithm that uses the derivative of the function
+     to approximate the root with increasing accuracy.
+     @param a The initial guess for the root.
+     @param epsilon The desired level of accuracy for the root approximation.
+     @return The approximate value of the root.
+     */
     public double newtonRaphsonMethod(double a, double epsilon) {
         double x = a;
         double f = valueAt(x);
@@ -85,6 +109,14 @@ public abstract class Function {
         }
         return x;
     }
+
+    /**
+     Performs the Newton-Raphson Method to find the root of a function starting from an initial guess.
+     The Newton-Raphson Method is an iterative numerical algorithm that uses the derivative of the function
+     to approximate the root with increasing accuracy.
+     @param a The initial guess for the root.
+     @return The approximate value of the root.
+     */
     public double newtonRaphsonMethod(double a) {
         double epsilon = 1e-5; //error value
         double x = a;
@@ -97,7 +129,6 @@ public abstract class Function {
         }
         return x;
     }
-
 }
 
 
