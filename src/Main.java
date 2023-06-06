@@ -4,14 +4,14 @@ public class Main {
     private static Random rnd;
 
     public static void main(String[] args) {
-        //testPartA();
+        testPartA();
         testPartB();
     }
 
     /**
      * Performs tests of part A.
      */
-    /*private static void testPartA() {
+    private static void testPartA() {
         System.out.println("------------------------------ Tests for part A ------------------------------");
         Date d1 = new Date(2023, 5, 21);
         Object o1 = d1;
@@ -52,7 +52,6 @@ public class Main {
         dt2.setMinute(59);
         System.out.println("dt2: " + dt2);
     }
-    */
     /**
      * Performs tests of part B.
      */

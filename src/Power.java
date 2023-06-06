@@ -41,13 +41,18 @@ public class Power extends Function {
 
     @Override
     public Function derivative() {
-        if (power > 0) {
+        /*if (power > 0) {
             Function baseDerivative = function.derivative();
             Function internalDerivative = new Power(function, power - 1);
             return new Product(new Constant(power), new Product(internalDerivative, baseDerivative));
         } else {
             return new Constant(0); // The derivative of a constant is 0
         }
+         */
+        if (power == 1)
+            return function.derivative();
+        else
+            return new MultiProduct(new Constant(power), new Power(function, power - 1), function.derivative());
     }
 
 }
